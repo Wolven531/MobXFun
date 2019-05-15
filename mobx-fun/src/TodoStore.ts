@@ -1,10 +1,22 @@
+import {
+	// action,
+	autorun,
+	computed,
+	observable
+} from 'mobx'
+
 class TodoStore {
-	todos = []
+	@observable todos = []
+	@observable pendingRequests = 0
+
+	constructor() {
+		autorun(() => { console.log(this.report) })
+	}
 
 	/*
 	* @return number Count of completed Todo items
 	*/
-	get completedTodosCount(): number {
+	@computed get completedTodosCount(): number {
 		return this.todos.filter(
 			todo => todo.completed === true
 		).length
@@ -13,7 +25,7 @@ class TodoStore {
 	/*
 	* @return string Description of TodoStore state
 	*/
-	report(): string {
+	@computed report(): string {
 		if (this.todos.length === 0) {
 			return "<none>"
 		}
