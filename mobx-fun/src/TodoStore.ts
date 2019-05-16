@@ -44,6 +44,8 @@ class TodoStore {
 	}
 }
 
+export { TodoStore }
+
 // const todoStore = new TodoStore()
 
 // todoStore.addTodo("read MobX tutorial");
