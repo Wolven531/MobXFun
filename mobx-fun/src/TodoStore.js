@@ -2,21 +2,24 @@ import {
 	// action,
 	autorun,
 	computed,
+	decorate,
 	observable
 } from 'mobx'
 
 class TodoStore {
-	@observable todos = []
-	@observable pendingRequests = 0
+	// @observable todos = []
+	// @observable pendingRequests = 0
 
 	constructor() {
+		this.todos = observable([])
+		this.pendingRequests = observable(0)
 		autorun(() => { console.log(this.report) })
 	}
 
 	/*
 	* @return number Count of completed Todo items
 	*/
-	@computed get completedTodosCount(): number {
+	get completedTodosCount() {
 		return this.todos.filter(
 			todo => todo.completed === true
 		).length
@@ -25,7 +28,7 @@ class TodoStore {
 	/*
 	* @return string Description of TodoStore state
 	*/
-	@computed report(): string {
+	report() {
 		if (this.todos.length === 0) {
 			return "<none>"
 		}
@@ -35,7 +38,7 @@ class TodoStore {
 	/*
 	* @param string task Description of new Todo item
 	*/
-	addTodo(task: string) {
+	addTodo(task) {
 		this.todos.push({
 			task,
 			completed: false,
@@ -43,6 +46,11 @@ class TodoStore {
 		})
 	}
 }
+
+decorate(TodoStore, {
+	completedTodosCount: computed,
+	report: computed
+})
 
 export { TodoStore }
 
