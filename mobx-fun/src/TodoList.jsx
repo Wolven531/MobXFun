@@ -1,17 +1,5 @@
-// import {
-// 	// action,
-// 	autorun,
-// 	computed,
-// 	observable
-// } from 'mobx'
 import React from 'react'
 import { observer } from 'mobx-react'
-
-// import { TodoStore } from './TodoStore'
-
-// interface ITodoListProps {
-// 	store: TodoStore
-// }
 
 const TodoView = observer(props => null)
 
