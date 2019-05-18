@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { observer } from 'mobx-react'
 
-const TodoView = observer(props => null)
+import { TodoView } from './TodoView'
 
 @observer
 class TodoList extends Component {
