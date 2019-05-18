@@ -1,0 +1,11 @@
+{
+	"compilerOptions": {
+		"checkJs": true,
+		"experimentalDecorators": true,
+		"target": "es2018"
+	},
+	"exclude": [
+		"node_modules",
+		"**/node_modules/*"
+	]
+}
