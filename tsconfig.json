@@ -4,10 +4,16 @@
 		"experimentalDecorators": true,
 		"jsx": "react",
 		"module": "commonjs",
-		"target": "es2018"
+		"target": "esnext",
+		"outDir": "build",
+		"esModuleInterop": true
 	},
 	"exclude": [
 		"node_modules",
 		"**/node_modules/*"
-	]
+	],
+	"compileOnSave": true,
+	"typeAcquisition": {
+		"enable": true
+	}
 }
