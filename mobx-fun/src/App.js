@@ -12,7 +12,7 @@ class App extends Component {
 	render() {
 		return (
 			<article className="app">
-				<section className={cssStyles.header}>
+				<section>
 					<img src={logo} className="logo" alt="logo" />
 					<h2 className="title">
 						<Emoji label="danger" emoji="☢" />
